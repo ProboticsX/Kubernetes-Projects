@@ -1,0 +1,8 @@
+serviceAccount:
+  name: aws-load-balancer-controller
+  annotations:
+    "eks.amazonaws.com/role-arn": "arn:aws:iam::427509263767:role/hr-dev-lbc-iam-role"
+
+vpcId: vpc-0ae710b1f3d68a191
+region: us-east-1
+clusterName: hr-dev-eksdemo

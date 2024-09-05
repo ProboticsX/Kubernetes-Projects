@@ -1,0 +1,4 @@
+controller:
+  serviceAccount:
+    annotations:
+      eks.amazonaws.com/role-arn: arn:aws:iam::427509263767:role/hr-dev-efs-csi-iam-role
