@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nginx
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/ProboticsX/Kubernetes-Projects.git'
+    path: 02-Udemy-ArgoCD/04-deploy-custom-helm-local/nginx-custom-local
+    targetRevision: main
+    helm:
+      releaseName: nginx-custom
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: default
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
