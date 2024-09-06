@@ -7,7 +7,7 @@ metadata:
 spec:
     project: default
     source:
-        repoURL: 'https://gitlab.com/[your username]/samplegitopsapp.git'
+        repoURL: 'https://github.com/ProboticsX/Kubernetes-Projects.git'
         path: 02-Udemy-ArgoCD/02-deploy-app/manifests
         targetRevision: main
     destination:
