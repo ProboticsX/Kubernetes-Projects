@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nginx-custom-artifact
+  namespace: argocd
+spec:
+  project: default
+  source:
+    chart: nginx-custom-artifact
+    repoURL: https://proboticsx.github.io/Kubernetes-Projects/
+    targetRevision: 0.1.0
+    helm:
+      releaseName: nginx-custom-artifact
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: default
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
