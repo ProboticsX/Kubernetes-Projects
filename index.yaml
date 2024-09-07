@@ -3,12 +3,12 @@ entries:
   nginx-custom-artifact:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-09-06T22:29:04.351418-04:00"
+    created: "2024-09-07T12:26:49.538913-04:00"
     description: A Helm chart for Kubernetes
     digest: aa8219fa9e217349a43b095592f3287bbbb14e8ba794d6b3a71537277c98f787
     name: nginx-custom-artifact
     type: application
     urls:
-    - https://github.com/ProboticsX/Kubernetes-Projects.git/nginx-custom-artifact-0.1.0.tgz
+    - https://proboticsx.github.io/Kubernetes-Projects/nginx-custom-artifact-0.1.0.tgz
     version: 0.1.0
-generated: "2024-09-06T22:29:04.34846-04:00"
+generated: "2024-09-07T12:26:49.535174-04:00"
