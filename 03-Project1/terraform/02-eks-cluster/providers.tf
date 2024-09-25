@@ -6,7 +6,7 @@ terraform {
     }
   }
   backend "s3" {
-    bucket = "4054-shubhams-dev"
+    bucket = "4054-shubhams-eks"
     key    = "dev/eks-cluster/terraform.tfstate"
     region = "us-east-1"
 
