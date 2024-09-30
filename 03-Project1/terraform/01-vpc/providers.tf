@@ -7,7 +7,7 @@ terraform {
   }
   backend "s3" {
     bucket = "4054-shubhams-dev"
-    key    = "dev/eks-cluster/terraform.tfstate"
+    key    = "dev/eks/terraform.tfstate"
     region = "us-east-1"
 
     # For State Locking
