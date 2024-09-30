@@ -7,9 +7,16 @@ locals {
     },
     {
       rolearn  = "${aws_iam_role.admin_role.arn}"
-      username = "eks-admin" # Can be any name
+      username = "admin" # Can be any name
       groups   = ["system:masters"]
     },
+    {
+      rolearn  = "${aws_iam_role.readonly_role.arn}"
+      username = "readonly"
+      #groups   = [ "eks-readonly-group" ]
+      # Important Note: The group name specified in clusterrolebinding and in aws-auth configmap groups should be same. 
+      groups   = [ "${kubernetes_cluster_role_binding_v1.readonly_clusterrolebinding.subject[0].name}" ]
+    }
   ]
 }
 
