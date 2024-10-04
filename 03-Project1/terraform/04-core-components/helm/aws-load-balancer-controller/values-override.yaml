@@ -1,0 +1,8 @@
+serviceAccount:
+  name: aws-load-balancer-controller
+  annotations:
+    "eks.amazonaws.com/role-arn": "arn:aws:iam::427509263767:role/4054-shubhams-lbc-iam-role"
+
+vpcId: vpc-0ad17ef607a78397f
+region: us-east-1
+clusterName: 4054-shubhams-eks
