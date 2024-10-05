@@ -1,0 +1,6 @@
+serviceAccount: 
+  name: external-dns
+  annotations:
+    eks.amazonaws.com/role-arn: arn:aws:iam::427509263767:role/4054-shubhams-externaldns-iam-role
+
+policy: sync # to delete the record if the ingress is deleted
