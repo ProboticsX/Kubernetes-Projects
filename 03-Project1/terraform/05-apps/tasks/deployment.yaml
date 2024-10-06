@@ -18,7 +18,7 @@ spec:
         ports:
         - containerPort: 3000
         volumeMounts:
-            - mountPath: /app/tasks
+            - mountPath: /app/data
               name: tasks-volume
       volumes:
         - name: tasks-volume

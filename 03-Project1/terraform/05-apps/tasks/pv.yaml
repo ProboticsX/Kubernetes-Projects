@@ -3,12 +3,13 @@ kind: PersistentVolume
 metadata:
   name: tasks-pv
 spec:
-  capacity: 
-    storage: 1Gi
+  capacity:
+    storage: 5Gi
   volumeMode: Filesystem
-  storageClassName: gp2
   accessModes:
-    - ReadWriteOnce
-  hostPath:
-    path: /data
-    type: DirectoryOrCreate
+    - ReadWriteMany   # This allows multiple pods to read/write to the volume
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: efs-sc
+  csi:
+    driver: efs.csi.aws.com
+    volumeHandle: fs-0fc2374785122492c  # Replace with your actual EFS File System ID

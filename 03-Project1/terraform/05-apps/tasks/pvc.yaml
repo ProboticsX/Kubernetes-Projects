@@ -3,10 +3,9 @@ kind: PersistentVolumeClaim
 metadata:
   name: tasks-pvc
 spec:
-  volumeName: tasks-pv
   accessModes:
-    - ReadWriteOnce
-  storageClassName: gp2
+    - ReadWriteMany
+  storageClassName: efs-sc
   resources:
-    requests: 
-      storage: 1Gi
+    requests:
+      storage: 5Gi
