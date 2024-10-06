@@ -34,9 +34,7 @@ resource "aws_iam_role" "lbc_iam_role" {
     ]
   })
 
-  tags = {
-    tag-key = "AWSLoadBalancerControllerIAMPolicy"
-  }
+  tags = local.common_tags
 }
 
 # Associate Load Balanacer Controller IAM Policy to  IAM Role
