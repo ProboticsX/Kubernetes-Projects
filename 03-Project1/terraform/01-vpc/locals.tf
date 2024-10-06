@@ -7,6 +7,7 @@ locals {
     owner = "FNU Shubham"
     username = "shubhams"
     resource_prefix = "${local.AssetID}-${local.username}"
+    eks_cluster_name = "4054-shubhams-eks"
   
   common_tags = {
     AssetID = local.AssetID

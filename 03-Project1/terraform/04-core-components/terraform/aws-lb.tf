@@ -26,8 +26,8 @@ resource "aws_iam_role" "lbc_iam_role" {
         }
         Condition = {
           StringEquals = {
-            "${data.terraform_remote_state.eks_cluster.outputs.oidc_provider_arn}:aud": "sts.amazonaws.com",            
-            "${data.terraform_remote_state.eks_cluster.outputs.oidc_provider_arn}:sub": "system:serviceaccount:kube-system:aws-load-balancer-controller"
+            "${data.terraform_remote_state.eks_cluster.outputs.oidc_provider}:aud": "sts.amazonaws.com",            
+            "${data.terraform_remote_state.eks_cluster.outputs.oidc_provider}:sub": "system:serviceaccount:kube-system:aws-load-balancer-controller"
           }
         }        
       },

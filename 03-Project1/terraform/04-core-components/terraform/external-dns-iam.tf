@@ -26,6 +26,7 @@ resource "aws_iam_policy" "externaldns_iam_policy" {
     }
   ]
 })
+tags = local.common_tags
 }
 
 
@@ -47,17 +48,14 @@ resource "aws_iam_role" "externaldns_iam_role" {
         }
         Condition = {
           StringEquals = {
-            "${data.terraform_remote_state.eks_cluster.outputs.oidc_provider_arn}:aud": "sts.amazonaws.com",            
-            "${data.terraform_remote_state.eks_cluster.outputs.oidc_provider_arn}:sub": "system:serviceaccount:default:external-dns"
+            "${data.terraform_remote_state.eks_cluster.outputs.oidc_provider}:aud": "sts.amazonaws.com",            
+            "${data.terraform_remote_state.eks_cluster.outputs.oidc_provider}:sub": "system:serviceaccount:default:external-dns"
           }
         }        
       },
     ]
   })
-
-  tags = {
-    tag-key = "AllowExternalDNSUpdates"
-  }
+  tags = local.common_tags
 }
 
 # Associate External DNS IAM Policy to IAM Role
