@@ -18,3 +18,5 @@ override.tf.json
 # Ignore Terraform configuration files
 .terraform/
 .terraform.lock.hcl
+
+.node_modules/

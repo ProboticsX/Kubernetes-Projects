@@ -1,0 +1,9 @@
+controller:
+  serviceAccount:
+    annotations:
+      eks.amazonaws.com/role-arn: arn:aws:iam::427509263767:role/4054-shubhams-ebs-csi-iam-role
+
+node:
+  serviceAccount:
+    annotations:
+      eks.amazonaws.com/role-arn: arn:aws:iam::427509263767:role/4054-shubhams-efs-csi-iam-role

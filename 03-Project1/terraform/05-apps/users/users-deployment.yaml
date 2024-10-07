@@ -1,0 +1,29 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: users-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: users
+  template:
+    metadata:
+      labels:
+        app: users
+    spec:
+      containers:
+        - name: users
+          image: shubham0403/project2-users:2.0
+          env:
+            - name: DB_HOST
+              value: "mysql-np-service" # Set your root password
+            - name: DB_USER
+              value: "root"   # Database name where the script will run
+            - name: DB_PASSWORD
+              value: "rootpassword"
+            - name: DB_NAME
+              value: "mydatabase"
+          ports:
+            - containerPort: 3002
