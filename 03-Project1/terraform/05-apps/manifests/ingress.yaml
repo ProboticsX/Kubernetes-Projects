@@ -45,6 +45,14 @@ spec:
               service:
                 name: tasks-np-service
                 port: 
-                  number: 80
+                  number: 80  
+    - http:
+        paths:
+          - path: /users
+            pathType: Prefix
+            backend:
+              service:
+                name: users-np-service
+                port: 
+                  number: 3002
       
-    
