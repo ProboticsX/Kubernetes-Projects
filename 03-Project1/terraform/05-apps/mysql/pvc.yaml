@@ -4,7 +4,8 @@ metadata:
   name: mysql-pvc
 spec:
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteOnce  # Only one node can attach to this volume at a time
+  storageClassName: ebs-sc  # Reference to the storage class created
   resources:
     requests:
-      storage: 5Gi
+      storage: 4Gi  # Request 20Gi of storage

@@ -4,7 +4,7 @@ kind: Deployment
 metadata:
   name: mysql-deployment
 spec:
-  replicas: 1
+  replicas: 1 # cannot be 2 because aws-ebs volumes are scheduled in single zone only, but the two private nodes are in 1a and 1b
   selector:
     matchLabels:
       app: mysql
@@ -30,7 +30,12 @@ spec:
           volumeMounts:
             - name: init-db-volume
               mountPath: /docker-entrypoint-initdb.d
+            - name: mysql-storage
+              mountPath: /var/lib/mysql  # Default path for MySQL data
       volumes:
         - name: init-db-volume
           configMap:
             name: init-db-sql  # Reference to the ConfigMap
+        - name: mysql-storage
+          persistentVolumeClaim:
+            claimName: mysql-pvc  # Use the PVC created earlier
