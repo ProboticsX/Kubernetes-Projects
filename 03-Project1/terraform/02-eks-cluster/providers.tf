@@ -6,12 +6,12 @@ terraform {
     }
   }
   backend "s3" {
-    bucket = "4054-shubhams-dev"
+    bucket = "4054-shubhams-eks"
     key    = "dev/eks-cluster/terraform.tfstate"
     region = "us-east-1"
 
     # For State Locking
-    dynamodb_table = "4054-shubhams-dev"
+    dynamodb_table = "4054-shubhams-eks"
   }
 }
 

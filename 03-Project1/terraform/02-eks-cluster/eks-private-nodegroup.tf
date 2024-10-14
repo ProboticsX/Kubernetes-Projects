@@ -2,13 +2,13 @@ resource "aws_eks_node_group" "private_node_group" {
   cluster_name    = module.eks.cluster_name
   node_group_name = "${local.resource_prefix}-private-node-group"
   node_role_arn   = aws_iam_role.nodegroup_role.arn
-  subnet_ids      = data.terraform_remote_state.eks.outputs.private_subnets
+  subnet_ids      = data.terraform_remote_state.vpc.outputs.private_subnets
 
 
   ami_type       = "AL2023_ARM_64_STANDARD"
   capacity_type  = "ON_DEMAND"
   disk_size      = 20
-  instance_types = ["r6g.2xlarge","r6g.xlarge"]
+  instance_types = ["m6g.large", "m6g.xlarge"]
 
   scaling_config {
     desired_size = 2

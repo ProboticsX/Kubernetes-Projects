@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image from S3</title>
+</head>
+<body>
+    <h1>Image from S3</h1>
+    <img id="s3-image" src="" alt="Image from S3">
+    
+    <script>
+        // Fetch the image URL from the server and set it to the img tag
+        fetch('/images')
+            .then(response => response.text())
+            .then(url => {
+                document.getElementById('s3-image').src = url;
+            })
+            .catch(err => console.error('Error fetching image URL:', err));
+    </script>
+</body>
+</html>

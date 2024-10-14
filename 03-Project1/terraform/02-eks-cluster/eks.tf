@@ -14,7 +14,7 @@ module "eks" {
   }
 
   vpc_id                   = data.aws_vpc.vpc_data.id
-  control_plane_subnet_ids = data.terraform_remote_state.eks.outputs.public_subnets # control plane should be in public subnet
+  control_plane_subnet_ids = data.terraform_remote_state.vpc.outputs.public_subnets # control plane should be in public subnet
 
   # Cluster access entry
   # To add the current caller identity as an administrator

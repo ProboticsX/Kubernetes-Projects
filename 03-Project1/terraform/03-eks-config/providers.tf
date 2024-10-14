@@ -11,7 +11,7 @@ terraform {
     region = "us-east-1"
 
     # For State Locking
-    dynamodb_table = "4054-shubhams-dev"
+    dynamodb_table = "4054-shubhams-eks"
   }
 }
 

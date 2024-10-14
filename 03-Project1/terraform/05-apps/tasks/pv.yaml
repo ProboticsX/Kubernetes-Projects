@@ -12,4 +12,4 @@ spec:
   storageClassName: efs-sc
   csi:
     driver: efs.csi.aws.com
-    volumeHandle: fs-0fc2374785122492c  # Replace with your actual EFS File System ID
+    volumeHandle: fs-01c413bdba3f8bc32  # Replace with your actual EFS File System ID

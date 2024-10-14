@@ -1,8 +1,8 @@
-data "terraform_remote_state" "eks" {
+data "terraform_remote_state" "vpc" {
   backend = "s3"
   config = {
-    bucket = "4054-shubhams-dev"
-    key    = "dev/eks/terraform.tfstate"
+    bucket = "4054-shubhams-eks"
+    key    = "dev/vpc/terraform.tfstate"
     region = var.aws_region
   }
 }
