@@ -11,10 +11,8 @@ const S3_BUCKET = '4054-shubhams-eks';
 const IMAGE_FOLDER = 'images'
 const IMAGE_KEY = 'image.jpg';
 
-// Serve the static index.html file
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'images', 'index.html'));
-});
+app.use(express.static(path.join(__dirname, 'images')));
+
 
 // Endpoint to provide the S3 image URL
 app.get('/images', (req, res) => {

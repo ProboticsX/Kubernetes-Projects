@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: images-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: images
+  template:
+    metadata:
+      labels:
+        app: images
+    spec:
+      serviceAccountName: images-sa
+      containers:
+      - name: images
+        image: shubham0403/project2-images:4.0
+        ports:
+        - containerPort: 3003

@@ -55,4 +55,12 @@ spec:
                 name: users-np-service
                 port: 
                   number: 3002
-      
+    - http:
+        paths:
+          - path: /images
+            pathType: Prefix
+            backend:
+              service:
+                name: images-np-service
+                port: 
+                  number: 3003
