@@ -1,0 +1,39 @@
+# server:
+#   ingress:
+#     enabled: true
+#     controller: aws
+#     ingressClassName: ingress-class-app
+#     extraHosts: 
+#     - name: shubhams-argocd.pecs-operations-dev.nl.lexis.com
+#       path: /
+#     annotations:
+#       alb.ingress.kubernetes.io/load-balancer-name: ingress-app
+#       alb.ingress.kubernetes.io/scheme: internet-facing
+#       alb.ingress.kubernetes.io/healthcheck-protocol: HTTP 
+#       alb.ingress.kubernetes.io/healthcheck-port: traffic-port
+#       alb.ingress.kubernetes.io/healthcheck-interval-seconds: '15'
+#       alb.ingress.kubernetes.io/healthcheck-timeout-seconds: '5'
+#       alb.ingress.kubernetes.io/success-codes: '200'
+#       alb.ingress.kubernetes.io/healthy-threshold-count: '2'
+#       alb.ingress.kubernetes.io/unhealthy-threshold-count: '2'   
+#       alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS":443}, {"HTTP":80}]'
+#       alb.ingress.kubernetes.io/ssl-redirect: '443'
+#       external-dns.alpha.kubernetes.io/hostname: shubhams-argocd.pecs-operations-dev.nl.lexis.com
+
+#       # external-dns.alpha.kubernetes.io/hostname: shubhams-argocd.pecs-operations-dev.nl.lexis.com
+#       # ingress.kubernetes.io/rewrite-target: /
+#       # nginx.ingress.kubernetes.io/backend-protocol: HTTP
+#       # nginx.ingress.kubernetes.io/force-ssl-redirect: "false"
+#       # nginx.ingress.kubernetes.io/ssl-redirect: "false"
+#       # alb.ingress.kubernetes.io/listen-ports: "[{\"HTTPS\": 443}]"
+#       # alb.ingress.kubernetes.io/ssl-policy: ELBSecurityPolicy-TLS13-1-2-2021-06
+#       # alb.ingress.kubernetes.io/group.name: "pecs-operations-dev.nl.lexis.com"
+
+#       # extraRules:
+#       # - path: /*
+#       #   pathType: Prefix
+#       #   backend:
+#       #     service:
+#       #       name: ssl-redirect
+#       #       port:
+#       #         name: use-annotation 
